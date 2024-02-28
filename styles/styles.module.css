@@ -1,0 +1,28 @@
+.header {
+    margin-top: 50px;
+    text-align: center;
+    flex: 1
+}
+
+.header_text {
+    font-size: 50px !important
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0px
+}
+
+.search {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchbox {
+    margin-bottom: 50px;
+    width: 500px !important;
+}
+
