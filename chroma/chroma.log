@@ -1,0 +1,44 @@
+[33mWARNING[0m:  [04-03-2024 22:27:05] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [04-03-2024 22:27:05] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [04-03-2024 22:27:05] Starting component System
+[36mDEBUG[0m:    [04-03-2024 22:27:05] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [04-03-2024 22:27:05] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [04-03-2024 22:27:05] Starting component SqliteDB
+[36mDEBUG[0m:    [04-03-2024 22:27:05] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [04-03-2024 22:27:05] Starting component Posthog
+[36mDEBUG[0m:    [04-03-2024 22:27:05] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [04-03-2024 22:27:05] Starting component SegmentAPI
+[32mINFO[0m:     [04-03-2024 22:27:05] Started server process [[36m11136[0m]
+[32mINFO[0m:     [04-03-2024 22:27:05] Waiting for application startup.
+[32mINFO[0m:     [04-03-2024 22:27:05] Application startup complete.
+[32mINFO[0m:     [04-03-2024 22:27:05] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [04-03-2024 22:27:17] ::1:59235 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [04-03-2024 22:27:17] ::1:59235 - "GET /favicon.ico HTTP/1.1" 404
+[32mINFO[0m:     [04-03-2024 22:28:53] ::1:59406 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2024 22:28:53] ::1:59406 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2024 22:28:53] ::1:59407 - "GET /api/v1/collections/vector_search?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [04-03-2024 22:29:16] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [04-03-2024 22:29:16] ::1:59407 - "POST /api/v1/collections/e2eed491-9687-427d-8b08-3dac2269fb18/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2024 22:29:41] ::1:59469 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [04-03-2024 22:29:50] ::1:59484 - "POST /api/v1/collections/e2eed491-9687-427d-8b08-3dac2269fb18/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2024 22:29:58] ::1:59484 - "POST /api/v1/collections/e2eed491-9687-427d-8b08-3dac2269fb18/query HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2024 22:47:28] ::1:60757 - "POST /api/v1/collections/e2eed491-9687-427d-8b08-3dac2269fb18/query HTTP/1.1" 200
+[33mWARNING[0m:  [04-03-2024 22:48:02] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [04-03-2024 22:48:02] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [04-03-2024 22:48:02] Starting component System
+[36mDEBUG[0m:    [04-03-2024 22:48:02] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [04-03-2024 22:48:02] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [04-03-2024 22:48:02] Starting component SqliteDB
+[36mDEBUG[0m:    [04-03-2024 22:48:02] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [04-03-2024 22:48:02] Starting component Posthog
+[36mDEBUG[0m:    [04-03-2024 22:48:02] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [04-03-2024 22:48:02] Starting component SegmentAPI
+[32mINFO[0m:     [04-03-2024 22:48:02] Started server process [[36m9348[0m]
+[32mINFO[0m:     [04-03-2024 22:48:02] Waiting for application startup.
+[32mINFO[0m:     [04-03-2024 22:48:02] Application startup complete.
+[32mINFO[0m:     [04-03-2024 22:48:02] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [04-03-2024 22:48:06] ::1:60872 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2024 22:48:06] ::1:60872 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2024 22:48:06] ::1:60873 - "GET /api/v1/collections/vector_search?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [04-03-2024 22:48:09] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [04-03-2024 22:48:09] ::1:60873 - "POST /api/v1/collections/e2eed491-9687-427d-8b08-3dac2269fb18/query HTTP/1.1" 200

@@ -1,29 +1,19 @@
 import chromadb
+import chromadb.utils.embedding_functions as embedding_functions
+import os
 
-chroma_client = chromadb.Client()
-collection = chroma_client.create_collection(name="vector_search")
+openai_ef = embedding_functions.OpenAIEmbeddingFunction(
+                api_key=os.getenv('openai_api_key'),
+                model_name="text-embedding-ada-002"
+            )
 
-with open('genre_data.txt') as file:
-    documents = []
-    metadatas = []
-    ids = []
-    id = 1
+chroma_client = chromadb.PersistentClient(path="vectordb")
 
-    for row in file:
-        row = row.split(',', 1)
-        documents.append(row[1].strip('\n'))
-        metadatas.append({'item_id': row[0]})
-        ids.append(f'id{id}')
-        id += 1
-
-collection.add(
-    documents=documents,
-    metadatas=metadatas,
-    ids=ids
-)
+collection = chroma_client.get_collection(name="vector_search",
+                                             embedding_function=openai_ef)
 
 results = collection.query(
-    query_texts=["Get me calm songs I can listen to when sleeping"],
+    query_texts=["Get me house music from the swedish guy who died in 2018"],
     n_results=2
 )
 

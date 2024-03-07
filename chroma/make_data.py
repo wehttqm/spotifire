@@ -39,7 +39,7 @@ def get_genres() -> None:
 def get_descriptions() -> None:
     """ For each genre, generates a description of it
     """
-    with open('genres_super_simple.txt') as file:
+    with open('genres.csv') as file:
         genres = file.readlines()
         for i in range(len(genres)):
             genres[i] = genres[i].strip()
@@ -49,11 +49,10 @@ def get_descriptions() -> None:
                 response = client.chat.completions.create(
                     model="gpt-3.5-turbo",
                     messages=[
-                        {"role": "user", "content": f"Describe the traits of this music genre in a paragraph: {genre}"}
+                        {"role": "user", "content": f"Describe the specific traits of this music genre in a paragraph: {genre}"}
                     ]
                 )
                 writefile.write(f'{genre},{response.choices[0].message.content}\n')
 
 if __name__ == '__main__':
-    #get_genres()
-    get_descriptions()
+    pass
