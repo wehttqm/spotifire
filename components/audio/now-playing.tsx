@@ -8,19 +8,15 @@ import axios from 'axios'
 
 type Player = {
     addListener: any;
-    getCurrentState: any;
+    getCurrentState: () => any;
     connect: any;
     disconnect: any;
     togglePlay: () => void;
 } | undefined
 
 export const NowPlaying = ({ access_token }: { access_token: string }) => {
-
     const [ player, setPlayer ] = useState<Player>(undefined)
     const [ is_active, setActive ] = useState(false)
-    const [ is_paused, setPaused ] = useState(false);
-    const [ position, setPosition ] = useState('')
-    const [ currentTrack, setTrack ] = useState('')
 
     useEffect(() => {
         const script = document.createElement("script");
@@ -67,27 +63,32 @@ export const NowPlaying = ({ access_token }: { access_token: string }) => {
 
     useEffect(() => {
         const interval = setInterval(async () => {
-            if (player) {
-                try {
-                    const state = await player.getCurrentState();
-                    if (state) {
-                        const { position, track_window, volume } = state;
-                        setPosition(position);
-                        setTrack(track_window.current_track.name)
-                    }
-                } catch (error) {
-                    console.error("Error getting current state:", error);
+            if (is_active) {
+                const state = await player?.getCurrentState()!;
+                if (state) {
+                    const { position, track_window, volume } = state;
+                    setPosition(position);
+                    setTrack(track_window.current_track.name)
                 }
             }
         }, 10);
-
         return () => clearInterval(interval);
-    }, [player]);
+    }, [player, is_active]);
 
-    const { song } = useMusicContext()
+    useEffect(() => {
+        if (song) {
+            play(song.track_uri)
+            setSong(null)
+        }
+    })
 
-    if (song) {
-
+    const [ is_paused, setPaused ] = useState(false);
+    const [ position, setPosition ] = useState('')
+    const [ currentTrack, setTrack ] = useState('')
+    const { song, setSong } = useMusicContext()
+    
+    const play = async (track_uri: string) => {
+        await axios.put('/api/playback/play', { access_token, track_uri })
     }
 
     if (player) {

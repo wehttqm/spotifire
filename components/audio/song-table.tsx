@@ -16,6 +16,7 @@ import { useMusicContext } from "../providers/music-provider";
   
 const songs = [
     {
+        track_uri: "spotify:track:3G6hD9B2ZHOsgf4WfNu7X1?si=bf556c5f9ebc4fa7",
         iconUrl: "https://i.scdn.co/image/ab67616d0000b273187331e276c898d39764cc98",
         title: "Team",
         genre: "N/A",
