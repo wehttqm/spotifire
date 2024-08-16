@@ -23,10 +23,10 @@ export default async function Layout({ children }: Readonly<{ children: React.Re
                     <div className='flex flex-col h-screen'>
                         <Header/>
                         <div className='overflow-hidden flex h-full'>
-                            <div className='overflow-hidden flex-auto w-[35%] bg-zinc-100 dark:bg-zinc-900 rounded-[25px] ml-2 mr-1 mb-2'>
+                            <div className='hidden md:inline overflow-hidden flex-auto w-[35%] bg-zinc-100 dark:bg-zinc-900 rounded-[25px] ml-2 mr-1 mb-2 '>
                                     {children}
                             </div>
-                            <div className='flex-1 bg-zinc-100 dark:bg-zinc-900 rounded-[25px] mr-2 ml-1 mb-2 border-2'>
+                            <div className=' flex-1 bg-zinc-100 dark:bg-zinc-900 rounded-[25px] mr-2 ml-2 md:ml-1 mt-2 md:mt-0 mb-2 border-2'>
                                 {token ? <NowPlaying access_token={token}/> : <div className='flex h-full items-center justify-center font-bold'>Log in to use player</div>}
                             </div>   
                         </div> 
