@@ -11,8 +11,15 @@ export async function PUT(req: Request) {
     spotifyApi.setAccessToken(access_token)
 
     try {
-        await spotifyApi.play({"uris": [track_uri], "position_ms": 0})
-        return new NextResponse('OK', {status: 200})
+        console.log(track_uri)
+        await spotifyApi.play({
+            "context_uri": "spotify:album:3gBVdu4a1MMJVMy6vwPEb8",
+            "offset": {
+                "uri": track_uri
+            },
+            "position_ms": 0
+        })
+        return new NextResponse('OK', { status: 200 })
     } catch (err) {
         console.log('REFRESH POST ERROR:', err)
         return new NextResponse("Internal error", { status: 500 })

@@ -16,11 +16,20 @@ import { useMusicContext } from "../providers/music-provider";
   
 const songs = [
     {
-        track_uri: "spotify:track:3G6hD9B2ZHOsgf4WfNu7X1?si=bf556c5f9ebc4fa7",
+        track_uri: "spotify:track:3G6hD9B2ZHOsgf4WfNu7X1",
         iconUrl: "https://i.scdn.co/image/ab67616d0000b273187331e276c898d39764cc98",
         title: "Team",
+        artist: "Lorde",
         genre: "N/A",
         album: "Pure Heroine",
+    },
+    {
+        track_uri: "spotify:track:70LcF31zb1H0PyJoS1Sx1r",
+        iconUrl: "https://i.scdn.co/image/ab67616d0000b273df55e326ed144ab4f5cecf95",
+        title: "Creep",
+        artist: "Radiohead",
+        genre: "N/A",
+        album: "Pablo Honey"
     }
 ]
   
@@ -43,6 +52,7 @@ export function SongTable() {
                 <TableRow>
                     <TableHead className="w-[120px]">Icon</TableHead>
                     <TableHead>Title</TableHead>
+                    <TableHead>Artist</TableHead>
                     <TableHead>Album</TableHead>
                     <TableHead className="text-right">Genre</TableHead>
                 </TableRow>
@@ -54,6 +64,7 @@ export function SongTable() {
                             <Image priority src={song.iconUrl} alt='' width={100} height={100}/>
                         </TableCell>
                         <TableCell>{song.title}</TableCell>
+                        <TableCell>{song.artist}</TableCell>
                         <TableCell>{song.album}</TableCell>
                         <TableCell className="text-right">{song.genre}</TableCell>
                     </TableRow>

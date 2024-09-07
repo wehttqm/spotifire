@@ -1,10 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useMusicContext } from "../providers/music-provider"
-import { getSession } from "@/lib/auth";
+import Image from 'next/image'
 import { Button } from "@/components/ui/button";
-import { Play, Pause } from 'lucide-react'
+import { Play, Pause, StepBack, StepForward } from 'lucide-react'
 import axios from 'axios'
+import { MarqueeText } from "@/components/ui/marquee-text";
 
 type Player = {
     addListener: any;
@@ -68,7 +69,7 @@ export const NowPlaying = ({ access_token }: { access_token: string }) => {
                 if (state) {
                     const { position, track_window, volume } = state;
                     setPosition(position);
-                    setTrack(track_window.current_track.name)
+                    setTrack(track_window.current_track)
                 }
             }
         }, 10);
@@ -84,24 +85,38 @@ export const NowPlaying = ({ access_token }: { access_token: string }) => {
 
     const [ is_paused, setPaused ] = useState(false);
     const [ position, setPosition ] = useState('')
-    const [ currentTrack, setTrack ] = useState('')
+    const [ currentTrack, setTrack ] = useState<any>('')
     const { song, setSong } = useMusicContext()
     
     const play = async (track_uri: string) => {
         await axios.put('/api/playback/play', { access_token, track_uri })
     }
+    
+    // 
 
     if (player) {
         return (
             <div className="h-full rounded-[25px] px-4 py-2 flex justify-center items-center flex-col">
-                <Button className='h-12' disabled={!is_active} onClick={() => {
-                    player.togglePlay()
-                }}>
-                    {is_paused ? <Play className='w-8 h-8'/> : <Pause className='w-8 h-8'/>}
-                </Button>
-                <div>{currentTrack}</div>
-                <div>{position}</div>
+                {currentTrack &&
+                <div>
+                    <Image priority src={currentTrack.album.images[0].url || ''} alt='' width={400} height={400}/>
+                    <MarqueeText text={currentTrack.name}/>
+                    <div className=''>{currentTrack.artists[0].name}</div>
+                </div>
+                }
+                
+                <div className='flex flex-row mt-8 gap-x-2'>
+                    <Button className='h-12' variant='ghost'><StepBack className='w-6 h-6'/></Button>
+                    <Button className='h-12' disabled={!is_active} onClick={() => {
+                        player.togglePlay()
+                    }}>
+                        {is_paused ? <Play className='w-8 h-8'/> : <Pause className='w-8 h-8'/>}
+                    </Button>
+                    <Button className='h-12' variant='ghost'><StepForward className='w-6 h-6'/></Button>
+                </div>
+                <div className='mt-4'>{position}</div>
             </div>
         )
-    }   
+    }
+    return <div>Loading...</div> 
 }
