@@ -17,6 +17,7 @@ import { useMusicContext } from "../providers/music-provider";
 const songs = [
     {
         track_uri: "spotify:track:3G6hD9B2ZHOsgf4WfNu7X1",
+        album_uri: "spotify:album:0rmhjUgoVa17LZuS8xWQ3v",
         iconUrl: "https://i.scdn.co/image/ab67616d0000b273187331e276c898d39764cc98",
         title: "Team",
         artist: "Lorde",
@@ -25,6 +26,7 @@ const songs = [
     },
     {
         track_uri: "spotify:track:70LcF31zb1H0PyJoS1Sx1r",
+        album_uri: "spotify:album:3gBVdu4a1MMJVMy6vwPEb8",
         iconUrl: "https://i.scdn.co/image/ab67616d0000b273df55e326ed144ab4f5cecf95",
         title: "Creep",
         artist: "Radiohead",

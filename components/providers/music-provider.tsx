@@ -14,6 +14,7 @@ type MusicContext = {
 
 type Song = {
     track_uri: string;
+    album_uri: string;
     iconUrl: string;
     title: string;
     genre: string;

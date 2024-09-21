@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 const SpotifyWebAPI = require('spotify-web-api-node')
 
 export async function PUT(req: Request) {
-    const { access_token, track_uri } = await req.json()
+    const { access_token, track_uri, album_uri } = await req.json()
     const spotifyApi = new SpotifyWebAPI({
         clientId: process.env.NEXT_PUBLIC_CLIENT_ID,
         clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
@@ -13,7 +13,7 @@ export async function PUT(req: Request) {
     try {
         console.log(track_uri)
         await spotifyApi.play({
-            "context_uri": "spotify:album:3gBVdu4a1MMJVMy6vwPEb8",
+            "context_uri": album_uri,
             "offset": {
                 "uri": track_uri
             },

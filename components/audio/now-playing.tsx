@@ -78,7 +78,7 @@ export const NowPlaying = ({ access_token }: { access_token: string }) => {
 
     useEffect(() => {
         if (song) {
-            play(song.track_uri)
+            play(song.track_uri, song.album_uri)
             setSong(null)
         }
     })
@@ -88,8 +88,8 @@ export const NowPlaying = ({ access_token }: { access_token: string }) => {
     const [ currentTrack, setTrack ] = useState<any>('')
     const { song, setSong } = useMusicContext()
     
-    const play = async (track_uri: string) => {
-        await axios.put('/api/playback/play', { access_token, track_uri })
+    const play = async (track_uri: string, album_uri: string) => {
+        await axios.put('/api/playback/play', { access_token, track_uri, album_uri })
     }
     
     // 
