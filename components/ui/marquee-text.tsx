@@ -1,8 +1,10 @@
 "use client"
-import { useEffect, useRef, useState } from "react";
 
 const getWidth = (text: string) => {
-    // gets the width of the text we are about to render. If > 400, then we need sliding text. Otherwise, we just render the text normally. 
+    /* 
+    * gets the width of the text we are about to render. If > 400, then we need sliding text. Otherwise, we just render the text normally. 
+    * we can't get the width without rendering it, so we create a hidden element, take the width, and then remove it. 
+    */
     const tempContainer = document.createElement('div');
     tempContainer.style.visibility = 'hidden'; 
     tempContainer.style.position = 'absolute'; 
@@ -18,10 +20,7 @@ const getWidth = (text: string) => {
 }
 
 export const MarqueeText = ({ text }: { text: string }) => {
-    const test = useRef<any>()
-    const [isAnimated, setAnimated] = useState(false)
     const width = getWidth(text)
-
     if (width > 400) {
         return (
             <div className='marquee marquee--fit-content w-[400px] mt-2'>
@@ -37,6 +36,5 @@ export const MarqueeText = ({ text }: { text: string }) => {
     return (
         <div className='mt-2 text-2xl font-bold whitespace-nowrap overflow-hidden'>{text}</div>
     )
-
 }
 
