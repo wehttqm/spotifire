@@ -68,12 +68,12 @@ export const NowPlaying = ({ access_token }: { access_token: string }) => {
         return () => {
             player?.disconnect()
         }
-
     }, []);
 
     useEffect(() => {
         if (song && is_active) {
-
+            play(song.track_uri, song.album_uri)
+            setSong(null)
         }
     }, [song, is_active])
 
