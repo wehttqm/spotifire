@@ -1,6 +1,6 @@
 # Welcome to Spotifire 
 
-![alt text](https://github.com/wehttqm/spotifire/Spotifire.png?raw=true)
+![alt text](https://github.com/wehttqm/spotifire/blob/master/Spotifire.png?raw=true)
 
 ## Sad update
 
