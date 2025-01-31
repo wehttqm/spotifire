@@ -1,10 +1,12 @@
 # Welcome to Spotifire 
 
+Spotifire is an app that allowed you to semantically search for spotify content. This was achieved by parsing a user's query using a custom embeddings model trained on descriptions of various music genres. 
+The project relied on Spotify's recommendations API to receive songs, but this has been shut down as of November 2024 (People were using it to train AI models). So unfortunately the backend for Spotifire
+no longer works :( 
+
+You can use Spotifire as an inspiration for some of your front-end design, or if you have an idea for a backend implementation, hmu :)
+
 ![alt text](https://github.com/wehttqm/spotifire/blob/master/Spotifire.png?raw=true)
-
-## Sad update
-
-Spotify shut down their recommendations API, so this project isn't really feasible anymore :(
 
 _______________________________________________________________________________________________
 
