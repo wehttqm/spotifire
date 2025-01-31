@@ -1,3 +1,7 @@
+# Welcome to Spotifire 
+
+![alt text](https://github.com/wehttqm/spotifire/blob/master/Spotifire.png?raw=true)
+
 ## Sad update
 
 Spotify shut down their recommendations API, so this project isn't really feasible anymore :(
