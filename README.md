@@ -1,3 +1,9 @@
+## Sad update
+
+Spotify shut down their recommendations API, so this project isn't really feasible anymore :(
+
+_______________________________________________________________________________________________
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
