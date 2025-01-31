@@ -1,6 +1,6 @@
 'use client';
 import { Button } from "@/components/ui/button"
-import { getSession, refresh } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 import { useRouter } from "next/navigation";
 import qs from 'query-string'
 import { useEffect, useState } from "react";
@@ -16,8 +16,8 @@ export const Login = () => {
 
     useEffect(() => {
         async function doShit() {
-            refresh()
             const session = await getSession()
+            console.log(session)
             session ? setLoggedIn(true) : setLoggedIn(false)
         }
         doShit()

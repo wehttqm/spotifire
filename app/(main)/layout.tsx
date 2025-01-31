@@ -2,6 +2,7 @@ import { NowPlaying } from "@/components/audio/now-playing";
 import { MusicProvider } from "@/components/providers/music-provider";
 import { Header } from "@/components/ui/header";
 import { getSession } from "@/lib/auth";
+import axios from "axios";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -13,8 +14,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Layout({ children }: Readonly<{ children: React.ReactNode; }>) {
+
     const session = await getSession()
     const token = session?.access_token
+
+
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={inter.className}>
