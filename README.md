@@ -8,6 +8,8 @@ You can use Spotifire as an inspiration for some of your front-end design, or if
 
 ![alt text](https://github.com/wehttqm/spotifire/blob/master/Spotifire.png?raw=true)
 
+I'll be making a spinoff of Spotifire a wrapper for the Spotify Web Playback SDK, so you can easily play songs from Spotify in your project. Stay tuned for that!
+
 _______________________________________________________________________________________________
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
