@@ -94,6 +94,8 @@ export const NowPlaying = ({ access_token }: { access_token: string }) => {
 
     const play = async (track_uri: string, album_uri: string) => {
         await axios.put('/api/playback/play', { access_token, track_uri, album_uri })
+        const data = await axios.put('/api/seeds/get', { access_token })
+        console.log(data.data)
     }
 
 

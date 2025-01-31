@@ -2,7 +2,6 @@ import { NowPlaying } from "@/components/audio/now-playing";
 import { MusicProvider } from "@/components/providers/music-provider";
 import { Header } from "@/components/ui/header";
 import { getSession } from "@/lib/auth";
-import axios from "axios";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -17,7 +16,6 @@ export default async function Layout({ children }: Readonly<{ children: React.Re
 
     const session = await getSession()
     const token = session?.access_token
-
 
     return (
         <html lang="en" suppressHydrationWarning>
